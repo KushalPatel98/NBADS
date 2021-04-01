@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 An Optional Primer on Math and Statistics | Data Science and Econometrics for NBA Analytics</title>
+  <meta name="description" content="Chapter 2 An Optional Primer on Math and Statistics | Data Science and Econometrics for NBA Analytics" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 An Optional Primer on Math and Statistics | Data Science and Econometrics for NBA Analytics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 An Optional Primer on Math and Statistics | Data Science and Econometrics for NBA Analytics" />
+  
+  
+  
+
+<meta name="author" content="KP" />
+
+
+<meta name="date" content="2021-04-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="a-brief-introduction-to-textttr.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">NBA Data Tutorials</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#thematic-elements"><i class="fa fa-check"></i><b>1.1</b> Thematic Elements</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#how-you-should-approach-these-tutorials"><i class="fa fa-check"></i><b>1.2</b> How you should approach these tutorials</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#a-list-of-topics"><i class="fa fa-check"></i><b>1.3</b> A list of topics</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="an-optional-primer-on-math-and-statistics.html"><a href="an-optional-primer-on-math-and-statistics.html"><i class="fa fa-check"></i><b>2</b> An Optional Primer on Math and Statistics</a><ul>
+<li class="chapter" data-level="2.1" data-path="an-optional-primer-on-math-and-statistics.html"><a href="an-optional-primer-on-math-and-statistics.html#math-primer"><i class="fa fa-check"></i><b>2.1</b> Math Primer</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="an-optional-primer-on-math-and-statistics.html"><a href="an-optional-primer-on-math-and-statistics.html#summation-operator-sum"><i class="fa fa-check"></i><b>2.1.1</b> Summation Operator <span class="math inline">\(\sum\)</span></a></li>
+<li class="chapter" data-level="2.1.2" data-path="an-optional-primer-on-math-and-statistics.html"><a href="an-optional-primer-on-math-and-statistics.html#calculus"><i class="fa fa-check"></i><b>2.1.2</b> Calculus</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="an-optional-primer-on-math-and-statistics.html"><a href="an-optional-primer-on-math-and-statistics.html#statistics-primer"><i class="fa fa-check"></i><b>2.2</b> Statistics Primer</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="an-optional-primer-on-math-and-statistics.html"><a href="an-optional-primer-on-math-and-statistics.html#random-variables"><i class="fa fa-check"></i><b>2.2.1</b> Random Variables</a></li>
+<li class="chapter" data-level="2.2.2" data-path="an-optional-primer-on-math-and-statistics.html"><a href="an-optional-primer-on-math-and-statistics.html#expected-value-and-variance"><i class="fa fa-check"></i><b>2.2.2</b> Expected Value and Variance</a></li>
+<li class="chapter" data-level="2.2.3" data-path="an-optional-primer-on-math-and-statistics.html"><a href="an-optional-primer-on-math-and-statistics.html#statistical-estimators"><i class="fa fa-check"></i><b>2.2.3</b> Statistical Estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="an-optional-primer-on-math-and-statistics.html"><a href="an-optional-primer-on-math-and-statistics.html#concluding-remarks"><i class="fa fa-check"></i><b>2.3</b> Concluding Remarks</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="a-brief-introduction-to-textttr.html"><a href="a-brief-introduction-to-textttr.html"><i class="fa fa-check"></i><b>3</b> A Brief Introduction to <span class="math inline">\(\texttt{R}\)</span></a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Science and Econometrics for NBA Analytics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="an-optional-primer-on-math-and-statistics" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> An Optional Primer on Math and Statistics</h1>
+<p>I want these tutorials to appeal to people that are just starting out with data science to people with technical backgrounds that may not have a lot of experience with statistics, which is why I am separating any discussion that involves a lot of math into an optional appendix. Therefore, the majority of the tutorial will focus on key concepts and develop familiarity with <span class="math inline">\(\texttt{R}\)</span>. However, working with quantitative NBA data and statistics will involve some math.</p>
+<p>This section gives a brief primer on the math and statistics that will come in useful throughout these tutorials. After skimming this section, if you feel that you already know everything detailed here, you can skip this section. You can also come back to this section while reading the tutorial if you need a refresher or more details. <strong>In fact, I am writing these tutorials so that it possible to understand the different algorithms and statistical techniques entirely through intuition. While I recommend understanding the key concepts mathematically, you can ignore all math in these tutorials if you want to.</strong></p>
+<p>This section only gives the background for the math and statistics needed to understand the key concepts of the tutorials, <span class="math inline">\(\textit{not}\)</span> the appendix. I have added the appendix for people with a quantitative background in fields such as engineering, math, or data science. Many of the econometric methods and machine learning algorithms have room for “tweaking”, and a more involved discussion of the material may give you insights as to what changes you want to make. If you want to read the appendix, I’m assuming you already know about the concepts necessary to understand them or that you can learn them yourself if necessary.</p>
+<div id="math-primer" class="section level2">
+<h2><span class="header-section-number">2.1</span> Math Primer</h2>
+<p>Throughout this section, I will assume that you know algebra at a highschool level. A knowledge of basic calculus is helpful but it is not necessary as I will give the background about calculus that is necessary to go through the tutorials.</p>
+<div id="summation-operator-sum" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Summation Operator <span class="math inline">\(\sum\)</span></h3>
+<p>The one greek character that will come up often throughout these tutorials is the Greek capital letter for sigma, which is denoted as <span class="math inline">\(\sum\)</span>. Summing a lot of numbers comes up frequently throughout statistics, so <span class="math inline">\(\sum\)</span> is used often as a shorthand that means, “sum these numbers”. It is usually represented as follows,
+<span class="math display">\[ \sum_{i=1}^{n} x_{i}\]</span>. Lets understand this more carefully. The <span class="math inline">\(x_{i}\)</span>’s are a list of ordered numbers that you already know of. The <span class="math inline">\(n\)</span> indicates that there are <span class="math inline">\(n\)</span> different numbers that you are trying to sum over. For example, if <span class="math inline">\(x_{1} = 2, x_{2} = 6, x_{3} = -7\)</span> and <span class="math inline">\(x_{4} = 22\)</span>, then the short-hand notation is
+<span class="math display">\[ \sum_{i=1}^{4} x_{i} = x_{1}+ x_{2} + x_{3} + x_{4} = 2 + 6 - 7 + 22 = 23.\]</span>
+We can also specify some transformation to the numbers <span class="math inline">\(x_{i}\)</span>. For example, if we want the sum of twice the square of those previous four numbers, we write
+<span class="math display">\[ \sum_{i=1}^{4} 2x_{i}^{2} = 16 + 144 - 196 + 1936 = 1900.\]</span></p>
+<p>It is also common to specify a formula for the numbers <span class="math inline">\(x_{i}\)</span>. For example, we might say that <span class="math inline">\(x_{i} = 3i\)</span>, so if we wanted to sum the first 5 multiples of three, then we can write,
+<span class="math display">\[  \sum_{i=1}^{5} 3i = 3 + 6 + 9 + 12 + 15 = 45\]</span>.</p>
+<p>An especially useful way to use this notation is when there is complicated definition for what numbers you want to sum. Suppose that someone gives you the points that Kevin Garnett scored in each game of the 2003 and 2004 seasons, but you want to calculate the average points per game that KG scored throughout these seasons. Let’s create some notation. We want to calculate <span class="math inline">\(PPG_{py}\)</span>, where <span class="math inline">\(PPG\)</span> stands for points per game,the <span class="math inline">\(p\)</span> subscript stands for the name of the player of interest, and the <span class="math inline">\(y\)</span> stands for the season year that player <span class="math inline">\(p\)</span> played for. In total, we read the notation <span class="math inline">\(PPG_{py}\)</span> as “points per game scored by player <span class="math inline">\(p\)</span> in year <span class="math inline">\(y\)</span>. The data that we have been given is <span class="math inline">\(P_{pyg}\)</span>, where <span class="math inline">\(P\)</span> stands for points scored, <span class="math inline">\(p\)</span> and <span class="math inline">\(y\)</span> have the same definitions made previously, and <span class="math inline">\(g\)</span> stands for the specific game played in the year. We read this as”points scored by player <span class="math inline">\(p\)</span> in year <span class="math inline">\(y\)</span> in game <span class="math inline">\(g\)</span>. Noting that KG played 82 games for both the 2003 and 2004 seasons, we can calculate
+<span class="math display">\[ PPG_{KG,2003} = \frac{1}{82}\sum_{g = 1}^{g = 82} P_{KG,2003,g} = 24.2\]</span> and
+<span class="math display">\[ PPG_{KG,2004} = \frac{1}{82}\sum_{g = 1}^{g = 82} P_{KG,2003,g} = 22.5\]</span>.
+As a checkpoint, make sure you understand these two expressions and why they make sense.</p>
+</div>
+<div id="calculus" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Calculus</h3>
+<p>A common theme across econometrics and machine learning is the maximization or minimization of some numerical objective function or criteria. The goal of maximizing or minimizing an objective function is called an <strong>optimization problem</strong>. Specific examples about what this means will come later. For now, let’s develop some calculus tools to help us understand how to solve optimization problems. This discussion about calculus will be very general. If you want to understand these concepts in more depth, I recommend finding freely available videos online or through commonly used calculus textbooks such as Stewart’s <em>Calculus</em>.</p>
+<div id="single-variable" class="section level4">
+<h4><span class="header-section-number">2.1.2.1</span> Single Variable</h4>
+<p>The main tool used for solving optimization problems is <strong>differentiation</strong>. Differentiation of a function <span class="math inline">\(f(x)\)</span> finds another function denoted as <span class="math inline">\(f&#39;(x)\)</span> that outputs the slope of the <strong>tangent</strong> line at each value of <span class="math inline">\(x\)</span>. The function <span class="math inline">\(f&#39;(x)\)</span> is called the <strong>derivative</strong> of <span class="math inline">\(f(x)\)</span>. It also commonly denoted as <span class="math inline">\(\frac{df}{dt}\)</span>. The tangent line to a function <span class="math inline">\(f(x)\)</span> at some point <span class="math inline">\(x=x_{0}\)</span> is the line that touches a curve at that point, matching the curve’s slope there. Therefore, the <span class="math inline">\(f(x_{0})\)</span> is the rate that <span class="math inline">\(f(x)\)</span> will change by if <span class="math inline">\(x_{0}\)</span> is changed by a very small amount. Take a look at the the figure below.</p>
+<div class="figure">
+<img src="images/derivative.png" width="800" height="350" alt="" />
+<p class="caption">Figure 1: Tangent Lines</p>
+</div>
+<p>Our original function <span class="math inline">\(f(x)\)</span> is the red curve. The black line and the green line are tangent lines to <span class="math inline">\(f(x)\)</span> at <span class="math inline">\(x = -1.60\)</span> and <span class="math inline">\(x = 1.4\)</span>. The slope of the black line is negative which means <span class="math inline">\(f&#39;(-1.60) &lt; 0\)</span> and the slope of the green line is positive which means <span class="math inline">\(f&#39;(1.4) &gt; 0\)</span>.</p>
+<p><strong>Note:</strong> The derivative <span class="math inline">\(f&#39;(x)\)</span> gives the value of the <strong>slope</strong> at the point <span class="math inline">\(x\)</span>, not the tangent line.</p>
+<p>Also, we can differentiate a function several times. The second derivative of <span class="math inline">\(f(x)\)</span> is denoted as <span class="math inline">\(f&#39;&#39;(x)\)</span> or <span class="math inline">\(\frac{d^{2}f}{dx^{2}}\)</span>. The interpretation of the second derivative is the slope of the derivative function, or how quickly the function <span class="math inline">\(f(x)\)</span> is increasing or decreasing. Think of this as <span class="math inline">\(f(x)\)</span> being distance travelled, <span class="math inline">\(f&#39;(x)\)</span> being velocity, and <span class="math inline">\(f&#39;&#39;(x)\)</span> being accerleration.</p>
+<p>I have left off many details related to differentiation for the purpose of keeping this section brief. To actually calculate derivatives of several different types of functions, I recommend looking at the notes on <em><a href="https://tutorial.math.lamar.edu/pdf/calculus_cheat_sheet_derivatives.pdf" class="uri">https://tutorial.math.lamar.edu/pdf/calculus_cheat_sheet_derivatives.pdf</a></em> which was created by <em>Paul’s Online Notes</em>.</p>
+</div>
+<div id="optimization-with-calculus" class="section level4">
+<h4><span class="header-section-number">2.1.2.2</span> Optimization with Calculus</h4>
+<p>Now that have learned about differentiation, we can talk about solving optimization problems. Collectively, maxima and minima are called <strong>extrema</strong>. There are two different kinds of maximum and minimum values to a function. If a function <span class="math inline">\(f(x)\)</span> obtains a maximum value at <span class="math inline">\(x = x^{*}\)</span> such that <span class="math inline">\(f(x^{*})\)</span> is larger than all other values of <span class="math inline">\(f(x)\)</span>, then <span class="math inline">\(x = x^{*}\)</span> is a <strong>global maximizer</strong> and <span class="math inline">\(f(x^{*})\)</span> is a <strong>global maximum</strong>.</p>
+<p>On the other hand, if <span class="math inline">\(f(x^{*})\)</span> obtains a maximum on some interval <span class="math inline">\(a \leq x \leq b\)</span> but there may exist another value <span class="math inline">\(x^{**}\)</span> such that <span class="math inline">\(f(x^{**}) \geq f(x^{*})\)</span> then <span class="math inline">\(x^{*}\)</span> is a <strong>local maximizer</strong> and <span class="math inline">\(f(x^{*})\)</span> is a <strong>local maximum</strong>. The definitions of the <strong>global minimizer, global minimum, local minimizer, and local minimum</strong> are similar.</p>
+<p>To find the maximum or minimum value of a function <span class="math inline">\(f(x)\)</span>, we solve the equation <span class="math inline">\(f&#39;(x) = 0\)</span>. This means that the slope of a function at its minimum or maximum value is 0, or that the tangent line is horizontal. If <span class="math inline">\(f&#39;(x^{*}) = 0\)</span> and <span class="math inline">\(f&#39;&#39;(x^{*}) &gt; 0\)</span>, then <span class="math inline">\(x^{*}\)</span> is a local or global minimizer. If <span class="math inline">\(f&#39;&#39;(x^{*}) &lt; 0\)</span>, then <span class="math inline">\(x^{*}\)</span> is a local or global maximizer. If <span class="math inline">\(f&#39;&#39;(x^{*}) = 0\)</span>, then <span class="math inline">\(x^{*}\)</span> could be a minimizer, maximizer, or neither. If <span class="math inline">\(f&#39;(x) = 0\)</span> has no solutions, then <span class="math inline">\(f\)</span> has no local extrema. In this case, <span class="math inline">\(f\)</span> could be strictly increasing or strictly decreasing.</p>
+<p>Take a look at the figure below. The two points with the tangents lines are shown. Try to figure out whether each of those two points are local/global minima, local/global maxima, or neither. No computation should be needed. You can conceptually reason through this question.</p>
+<div class="figure">
+<img src="images/maxmin.png" width="800" height="350" alt="" />
+<p class="caption">Figure 2: Local Min/Max</p>
+</div>
+<p><strong>Example</strong></p>
+<p>Consider the function <span class="math display">\[f(x) = x^{3} - 2x\]</span>.
+Then <span class="math inline">\(f&#39;(x) = 3x^{2} - 2\)</span>. Solving <span class="math inline">\(f&#39;(x) = 0\)</span> implies <span class="math inline">\(x_{1} = \sqrt{\frac{2}{3}}\)</span> and <span class="math inline">\(x_{2} = -\sqrt{\frac{2}{3}}\)</span> are both solutions and are extrema for this function. Note that <span class="math inline">\(f&#39;&#39;(x) = 6x\)</span>. Then <span class="math inline">\(f&#39;&#39;(x_{1}) = 6\sqrt{\frac{2}{3}}\)</span> and <span class="math inline">\(f&#39;&#39;(x_{2}) = -6\sqrt{\frac{2}{3}}\)</span>. Therefore <span class="math inline">\(x_{1}\)</span> is a local minimizer and <span class="math inline">\(x_{2}\)</span> is a local maximizer.</p>
+</div>
+</div>
+</div>
+<div id="statistics-primer" class="section level2">
+<h2><span class="header-section-number">2.2</span> Statistics Primer</h2>
+<p>This section gives a brief primer about theoretical statistics. The section assumes that you know about the basics of probability at the high school level. If you need a refresher, I recommend looking at <span class="math inline">\(\texttt{https://www.khanacademy.org/math/probability/probability-geometry}\)</span>.</p>
+<div id="random-variables" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Random Variables</h3>
+<p>A <strong>random variable</strong> <span class="math inline">\(X\)</span> is a variable that can take on several different values with some probability. The probabilities come from some underlying function called a <strong>probability mass function (PMF)</strong>. The PMF is usually written <span class="math inline">\(p(X = x)\)</span>. The notation is a bit confusing and requires a bit of explanation. We read this PMF as “the probability that <span class="math inline">\(X\)</span> is equal to <span class="math inline">\(x\)</span>”. The uppercase <span class="math inline">\(X\)</span> is the random variable whereas the lowercase <span class="math inline">\(x\)</span> is a <strong>realization</strong> of the random variable. The random variable <span class="math inline">\(X\)</span> can take on many values and <span class="math inline">\(x\)</span> is one of the values that <span class="math inline">\(X\)</span> could take.</p>
+<p>An example of a random variable <span class="math inline">\(X\)</span> is a coin flip. The value that <span class="math inline">\(X\)</span> can take are either <span class="math inline">\(x = 1\)</span> if the result is heads or <span class="math inline">\(x= 0\)</span> if the result is tails.The collection of values that <span class="math inline">\(X\)</span> could take is denoted as <span class="math inline">\(\Omega\)</span>. For our coin flip example, <span class="math inline">\(\Omega = \{0,1\}\)</span>. One useful piece of notation is the <span class="math inline">\(\in\)</span> symbol. The <span class="math inline">\(\in\)</span> symbol is used to indicate whether or not <span class="math inline">\(x\)</span> is a possible value that <span class="math inline">\(X\)</span> could take on. Writing <span class="math inline">\(x \in \Omega\)</span> is a statement which is either true or false. This means that <span class="math inline">\(1 \in \Omega\)</span> is true and <span class="math inline">\(0 \in \Omega\)</span> is true. The statement <span class="math inline">\(6 \in \Omega\)</span> is false. This means that <span class="math inline">\(p(X = 6) = 0\)</span>. Note that since <span class="math inline">\(\Omega\)</span> is the collection of all possible values that <span class="math inline">\(X\)</span> could take, <span class="math display">\[\sum_{x \in \Omega} p(X = x) = 1\]</span>. This statement means that the sum of the probabilities of all possible values that <span class="math inline">\(X\)</span> could take is 1.</p>
+<p><strong>Example</strong></p>
+<p>One example of a random variable is the result of a dice roll. Assume that we have a standard fair dice with six faces. Then we define the random variable
+<span class="math display">\[D = \text{value on the front face of a dice after a roll}\]</span>.
+Then the collection of possible values that <span class="math inline">\(D\)</span> could take is <span class="math display">\[\Omega = \{1,2,3,4,5,6\}\]</span>. Since we stated the dice is fair, meaning that all faces are equally likely, the PMF is given by <span class="math display">\[p(D = d) = \frac{1}{6}\]</span> for <span class="math inline">\(d = 1,2,3,4,5,\)</span> and <span class="math inline">\(6\)</span>.</p>
+</div>
+<div id="expected-value-and-variance" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Expected Value and Variance</h3>
+<p>Consider an experiment where you flip and record the result of a coin flip repeatedly multiple times, where heads is equal to a 1 and tails is equal to a zero. If you average the results after a ridiculously long time of flipping the coin, you should expect the value to be <span class="math inline">\(\frac{1}{2}\)</span> since both 1 and 0 are equally likely. This value is called the <strong>expected value</strong> of a random variable and is denoted and defined as <span class="math display">\[\mathbb{E}[X] = \sum_{x \in \Omega} xp(X = x)\]</span>.</p>
+<p>An important property about the expected value operator is that the expected value of the sum of the linear combination of two or more random variables is given by <span class="math display">\[\mathbb{E}[aX+bY] = a\mathbb{E}[X] + b\mathbb{E}[Y]\]</span> where <span class="math inline">\(a,b\)</span> are constants, not random variables.</p>
+<p><strong>Example</strong></p>
+<p>Consider the dice roll example from earlier. We can calculate the expected value as
+<span class="math display">\[\mathbb{E}[D] = \sum_{x \in \Omega} xp(X = x) = \frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6) = \frac{21}{6}\]</span>
+<strong>Example: Hack-a-Shaq</strong></p>
+<p>In the 2001 NBA season, Shaquille O’Neil averaged <span class="math inline">\(0.580\)</span> for 2-point field goal percentage, <span class="math inline">\(0\)</span> for 3-point field goal percentage, and <span class="math inline">\(0.555\)</span> from the free throw line. Imagine that the Lakers are playing in the playoffs, these statistics are accurate probabilities of Shaq’s scoring, the two free throws are independent events, and the opposing team is in the bonus. Should opposing teams foul Shaq before he makes a field goal attempt?</p>
+<p>We are now working with two random variables. The random variable defined by <span class="math inline">\(FG\)</span>, which is equal to 0 if Shaq misses, 2 if Shaq makes a 2 pointer, and 3 if Shaq makes a 3 pointer. The expected value of a field goal is <span class="math display">\[\mathbb{E}[FG] = 0.420(0) + 0.580(2) + 0(3) = 1.16\]</span>. On the other hand, if Shaq is fouled, then we are dealing with a random variable <span class="math inline">\(FT\)</span>. The expected value is <span class="math display">\[\mathbb{E}[FT] = 0(.445) + 1(.555)(.445) + 2(.555)^{2}  = 0.8630\]</span>. If the opposing team fouled before a shot was attempted while in the bonus, Shaq would be expected to score <span class="math inline">\(0.297\)</span> less points on average.</p>
+<p>The <strong>variance</strong> is defined from the expected value. It shows the squared deviation of possible events from the sample mean. The variance of a random variable <span class="math inline">\(X\)</span> is defined as <span class="math display">\[ \sigma_{X}^{2} = Var(X) = \mathbb{E}[(X-\mathbb{E}[X])^{2}] = \mathbb{E}[X^{2}] - (\mathbb{E}[X])^{2}. \]</span>
+The <strong>standard deviation</strong> is defined as the square root of the variance and is denoted by <span class="math inline">\(\sigma_{X}\)</span>.</p>
+<p>The covariance between two random variables is a measure of the joint variability of two random variables. The identity for covariance is <span class="math display">\[Cov(X,Y) = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y]\]</span>. A more interpretable version is the correlation, which is defined by <span class="math display">\[Corr(X,Y) = \frac{Cov(X,Y)}{\sigma_{X}\sigma_{Y}}\]</span>. This is standardized to be between -1 and 1. A value close to 1 indicates very strong positive comovement between two random variables, wheras a value close to 1 shows a very strong negative comovement between the two variables. If the correlation is near 0, the comovement is very weak.
+<strong>Example</strong></p>
+<p>Consider the NBA advanced stat usage percentage (<span class="math inline">\(USG%\)</span>), which is an estimate of the percentage of team plays used by a player while he was on the floor. We might expect that this is correlated with the points per game scored by a player. As a teaser, lets try to analyze this for the 2018 NBA season with <span class="math inline">\(\texttt{R}\)</span>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="an-optional-primer-on-math-and-statistics.html#cb1-1"></a><span class="kw">library</span>(nbastatR)</span>
+<span id="cb1-2"><a href="an-optional-primer-on-math-and-statistics.html#cb1-2"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="an-optional-primer-on-math-and-statistics.html#cb1-3"></a>data &lt;-<span class="st"> </span><span class="kw">bref_players_stats</span>(<span class="dt">seasons =</span> <span class="dv">2018</span>, <span class="dt">tables =</span> <span class="kw">c</span>(<span class="st">&quot;advanced&quot;</span>, <span class="st">&quot;per_game&quot;</span>))</span></code></pre></div>
+<pre><code>## parsed http://www.basketball-reference.com/leagues/NBA_2018_advanced.html
+## parsed http://www.basketball-reference.com/leagues/NBA_2018_per_game.html
+## Advanced
+## PerGame</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="an-optional-primer-on-math-and-statistics.html#cb3-1"></a>scatter &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(<span class="dt">x=</span>pctUSG, <span class="dt">y=</span>ptsPerGame)) <span class="op">+</span></span>
+<span id="cb3-2"><a href="an-optional-primer-on-math-and-statistics.html#cb3-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size=</span><span class="dv">2</span>, <span class="dt">shape=</span><span class="dv">23</span>)</span>
+<span id="cb3-3"><a href="an-optional-primer-on-math-and-statistics.html#cb3-3"></a>scatter <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;USG %&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;PPG&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;PPG vs USG %&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="an-optional-primer-on-math-and-statistics.html#cb4-1"></a>Cov &lt;-<span class="st"> </span><span class="kw">cor</span>(data<span class="op">$</span>pctUSG,data<span class="op">$</span>ptsPerGame)</span>
+<span id="cb4-2"><a href="an-optional-primer-on-math-and-statistics.html#cb4-2"></a>data<span class="op">$</span>namePlayer[data<span class="op">$</span>pctUSG <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.4</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;Chris Boucher&quot;        &quot;PJ Dozier&quot;            &quot;Mindaugas Kuzminskas&quot;
+## [4] &quot;Naz Mitrou-Long&quot;</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="an-optional-primer-on-math-and-statistics.html#cb6-1"></a><span class="kw">print</span>(Cov)</span></code></pre></div>
+<pre><code>## [1] 0.6137692</code></pre>
+<p>The code is provided above. We will go into depth about how to create more of these plots in future tutorials. The scatterplot shows a somewhat strong correlation between points scored per game and the <span class="math inline">\(USG %\)</span>. This makes sense as players that are involved in more plays might also score at higher values. Some potential outliers seem to be those four points that have a <span class="math inline">\(USG %\)</span> greater than <span class="math inline">\(0.4\)</span>, but still score very low points per game. We identify these players as Chris Boucher, PJ Dozier, Mindaugas Kuzminskas, and Naz Mitrou-Long.</p>
+</div>
+<div id="statistical-estimators" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Statistical Estimators</h3>
+<p>We end the section off with a discussion about estimators, the crux of statistical modeling. To motivative the discussion about estimation, lets discuss the points scored by a particular player. Suppose that Michael Jordan plays 82 games in a season.Michael Jordan scores a lot of points, but on any given day, he might score a lot more points than typical, and he may also score way less points then usual due to either injuries, bad mood, or just simply a poor shooting night. Therefore, it is fair to say that the points that MJ scores in a particular game is random and follows some PMF. Since MJ, is retired, we can look at data for all of his games, and create a PMF for the amount of points he scores in a game. We can then calculate the expected value to find the true number of the points per game scored by MJ, which is <span class="math inline">\(30.1\)</span> points per game.</p>
+<p>Unfortunately, for current players, there is no way to do this with a hundred percent accuracy. There’s no way to know with certainly how many points per game a player will score next season. However we can do something. Suppose that the points that a player scores in all 82 games in a particular season are random variables but that we have realizations <span class="math inline">\(PPG_{1}, PPG__{2}, ..., PPG_{82}\)</span>. Suppose that the true value is <span class="math inline">\(PPG\)</span>, true value meaning the actual expected value of points per game that is unknown to us. Then <span class="math inline">\(\mathbb{E}[PPG_{i}] = PPG\)</span>. Now observe that
+<span class="math display">\[\frac{1}{82} \mathbb{E}[\sum_{i=1}^{82} PPG_{i}] = \frac{1}{82} \sum_{i=1}^{82} \mathbb{E}[PPG_{i}] = \frac{82PPG}{82} = PPG\]</span>.
+If we average the PPG for all 82 games that a player scores, we have obtained the actual expected value! More formally, the average is called the <em>sample mean</em>. Since the expected value of the sample mean is equal to the expected value of the points scored for a player, we say that the sample mean is an <em>unbiased estimator</em> for the actual expected value or the actual mean. In general, the sample mean is denoted by <span class="math inline">\(\bar{x}\)</span> and is calculated by
+<span class="math display">\[\bar{x} =  \frac{1}{n} \sum_{i=1}^{n} x_{i}.\]</span></p>
+<p>Similarly, the unbiased estimator for the variance is called the <em>sample variance</em>, which is denoted and calculated by,
+<span class="math display">\[ \bar{s} = \frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\bar{x})^{2}.\]</span>
+There is an <span class="math inline">\(n-1\)</span> in the denominator instead of a <span class="math inline">\(n\)</span> because the <span class="math inline">\(-1\)</span> is need to ensure that <span class="math inline">\(\bar{s}\)</span> is an unbiased estimator for <span class="math inline">\(Var(X)\)</span>. I won’t prove this assertion here, but you can attempt it yourself to practice some of the computation.</p>
+<p>We now define what <strong>bias</strong> actually means. In general, let any arbitrary estimator for the random variable <span class="math inline">\(X\)</span> be <span class="math inline">\(\hat{X}\)</span>. For example, if the random variable is points scored in a game, we can choose <span class="math inline">\(\hat{PPG} = 5\)</span>, which is a very bad estimator for most players, but may not be a bad estimator for NBA champion Kendrick Perkins, who averaged <span class="math inline">\(5.4\)</span> points in his career. The bias for an estimator is defined as <span class="math display">\[Bias[\hat{X}] = \mathbb{E}[\hat{X}-X].\]</span> Preferably, we want a bias equal to zero. But this may not be possible.</p>
+</div>
+</div>
+<div id="concluding-remarks" class="section level2">
+<h2><span class="header-section-number">2.3</span> Concluding Remarks</h2>
+<p>In this section, I provided a very brief primer/reference for the statistics and math that will be used in the key sections portions of the tutorials. We will take a short break from all of this math. In the next sections, we learn about the differences between econometrics and machine learning, and why both will be useful for NBA analytics. We then begin to learn how to use <span class="math inline">\(\texttt{R}\)</span>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="a-brief-introduction-to-textttr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/KushalPatel98/NBADS/edit/master/02-math-and-statistics-primer.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/KushalPatel98/NBADS/blob/master/02-math-and-statistics-primer.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

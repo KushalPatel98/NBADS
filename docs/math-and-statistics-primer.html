@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 The pool of tears | Data Science and Econometrics for NBA Analytics</title>
-  <meta name="description" content="Chapter 2 The pool of tears | Data Science and Econometrics for NBA Analytics" />
+  <title>Chapter 2 Math and Statistics Primer | Data Science and Econometrics for NBA Analytics</title>
+  <meta name="description" content="Chapter 2 Math and Statistics Primer | Data Science and Econometrics for NBA Analytics" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 The pool of tears | Data Science and Econometrics for NBA Analytics" />
+  <meta property="og:title" content="Chapter 2 Math and Statistics Primer | Data Science and Econometrics for NBA Analytics" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 The pool of tears | Data Science and Econometrics for NBA Analytics" />
+  <meta name="twitter:title" content="Chapter 2 Math and Statistics Primer | Data Science and Econometrics for NBA Analytics" />
   
   
   
@@ -24,7 +24,7 @@
 <meta name="author" content="KP" />
 
 
-<meta name="date" content="2021-03-29" />
+<meta name="date" content="2021-03-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="a-caucus-race-and-a-long-tale.html"/>
+<link rel="next" href="a-brief-introduction-to-textttr.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -72,9 +72,13 @@
 <li><a href="./">NBA Data Tutorials</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="the-pool-of-tears.html"><a href="the-pool-of-tears.html"><i class="fa fa-check"></i><b>2</b> The pool of tears</a></li>
-<li class="chapter" data-level="3" data-path="a-caucus-race-and-a-long-tale.html"><a href="a-caucus-race-and-a-long-tale.html"><i class="fa fa-check"></i><b>3</b> A caucus-race and a long tale</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#thematic-elements"><i class="fa fa-check"></i><b>1.1</b> Thematic Elements</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#how-you-should-approach-these-tutorials"><i class="fa fa-check"></i><b>1.2</b> How you should approach these tutorials</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#a-list-of-topics"><i class="fa fa-check"></i><b>1.3</b> A list of topics</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="math-and-statistics-primer.html"><a href="math-and-statistics-primer.html"><i class="fa fa-check"></i><b>2</b> Math and Statistics Primer</a></li>
+<li class="chapter" data-level="3" data-path="a-brief-introduction-to-textttr.html"><a href="a-brief-introduction-to-textttr.html"><i class="fa fa-check"></i><b>3</b> A Brief Introduction to <span class="math inline">\(\texttt{R}\)</span></a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -94,8 +98,9 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-pool-of-tears" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> The pool of tears</h1>
+<div id="math-and-statistics-primer" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Math and Statistics Primer</h1>
+<p>Econometrics and Data Science are really under the same umbrella of statistics. Statistics is usually defined as the collection, analysis, and interpretation of data and encompasses a wide array of fields such as the natural sciences, social sciences, linguistics, and medicine. Econometrics, as you may have guessed from the name, has something to do with economics. More specifically, econometrics is a subset of statistics that specializes in obser</p>
 
 </div>
             </section>
@@ -104,7 +109,7 @@
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="a-caucus-race-and-a-long-tale.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="a-brief-introduction-to-textttr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -154,6 +159,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

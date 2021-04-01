@@ -1,0 +1,16 @@
+preface
+thematic-elements
+how-you-should-approach-these-tutorials
+a-list-of-topics
+an-optional-primer-on-math-and-statistics
+math-primer
+summation-operator-sum
+calculus
+single-variable
+optimization-with-calculus
+statistics-primer
+random-variables
+expected-value-and-variance
+statistical-estimators
+concluding-remarks
+a-brief-introduction-to-textttr

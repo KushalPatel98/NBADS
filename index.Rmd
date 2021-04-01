@@ -1,9 +1,62 @@
 --- 
-title: "YOUR TITLE HERE"
-author: "YOUR NAME HERE"
+title: "Data Science and Econometrics for NBA Analytics"
+author: "KP"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+documentclass: book 
+
 ---
 
-# Down the rabbit-hole
+# Preface
+The 1960s was a period of time where oil became the most valuable and productivity augmenting resource for companies to extract, prompting companies to engage in a race to extract as much oil as possible without any regard for the environmental and social consequences. However, recent times has seen data replace oil as the most valuable resource, even for sports organizations. Analytics have a major place in today’s sports world. At some level, every sports organization relies on data and analytics for team development, salary structure, and in-game strategy. 
+
+Despite being a skeptic of sports analytics, I still believe that statistics can provide a more nuanced understanding and evaluation of the game of basketball if it is used correctly. The goal of this series of tutorials  is to provide basketball fans a hands-on explanation of classical data analysis techniques and to develop proficiency in applying these techniques in a modern and flexible but relatively easy to learn programming language in $\texttt{R}$. Broadly speaking, I want my tutorials to help people get started in two ways: acquire practical skills such as data sourcing, data visualization, and data cleaning, and an understanding of statistics and statistical fallacies so the reader can carry out careful and hopefully meaningful studies of questions related to basketball.
+
+## Thematic Elements 
+I am designing these tutorials with a specific theme throughout. Rather than very specific explanations about NBA advanced statistics , I want the reader to walk from these tutorials with knowledge of the **techniques and methodologies** of carrying out analytic studies. This means an emphasis on using $\texttt{R}$ for **exploratory data analysis (EDA)** and the application of statistics to help you learn about NBA analytics by yourself. Sports analytics is too broad and messy of a field for a person to detail everything that is to know. The best I can do is help you get started on discovering patterns and formulating questions by yourself. This doesn't mean I won't go over any details about advanced NBA statistics. This is a tutorial on the application of statistics to NBA analytics. Therefore, the general structure of the tutorials will be as follows, 
+
+1. A detailed discussion of a statistical technique
+2. How to implement that statistical technique in $\texttt{R}$
+3. A specific application to basketball
+4. An optional appendix. 
+
+I want these tutorials to appeal to a variety of different people. Therefore, I am leaving the main ideas of the statistics lecture in the first part and will leave the overtly mathematical explanations in the fourth part, the appendix, for interested readers with the appropriate background. 
+
+## How you should approach these tutorials
+With any skill, the best way to learn is by doing. Reading and spectating will only go so far when it comes to data analysis. Try to understand the explanations about the statistical techniques intuitively. You should be able to give a 2 to 4 sentence summary of what is actually trying to be accomplished. For the $\texttt{R}$ portions of the tutorials, I will be providing code directly on this document with the output printed. You should type the code while reading and make sure that the output on your screen is the same as the output in this document. Rather than trying to memorize the code you're typing, try to understand the general design of the code. Even experienced programmers rely on documentation and google for help, but good programmers understand proper code design. 
+
+## A list of topics 
+
+- Math and Statistics Prerequisites 
+- Differences between Machine Learning and Econometrics
+- Topic 1: Exploratory Data Analysis with $\texttt{R}$
+  - A Brief Introduction to $\texttt{R}$
+  - NBA Data Sources and Alternative Methods for Sourcing Data
+  - Data Visualization using $\texttt{ggplot2}$ 
+- Topic 2: Clustering
+  - $\textit{k}$ - means clustering
+  - DP- Means clustering algorithm
+  - Hierarchical Clustering 
+  - Application: Identifying different roles amongst NBA players
+- Topic 3: Classification Methods
+  - Logistic Regression
+  - Support Vector Machines 
+  - $\textit{K}$th Nearest Neighbors Method
+  - Application: Predicting Basketball Hall of Fame Inductees
+  - Application: Regular Season League MVP Tracker 
+- Topic 4: Fundamentals of Regression Analysis 
+  - Ordinary Least Squares (OLS)
+  - Statistical Inference
+  - Model Selection 
+  - Application: NBA team effects on high volume shooting 
+  - Application: Retrospective Analysis of the relationship between Strip Club Quality and James Harden's Performance (Credit to u/AngryCentrist)
+- Topic 5: Additional Topics in Regression
+  - Working with Data Issues
+  - Regression for Time Series Data
+  - Regression for Panel Data 
+  - Application: Analyzing the existence of Hot and Cold Streaks 
+  - Application: The beginning of the 3-point era
+  
+
+
 

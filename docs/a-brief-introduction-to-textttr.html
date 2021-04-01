@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Data Science and Econometrics for NBA Analytics</title>
-  <meta name="description" content="Data Science and Econometrics for NBA Analytics" />
+  <title>Chapter 3 A Brief Introduction to \(\texttt{R}\) | Data Science and Econometrics for NBA Analytics</title>
+  <meta name="description" content="Chapter 3 A Brief Introduction to \(\texttt{R}\) | Data Science and Econometrics for NBA Analytics" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Data Science and Econometrics for NBA Analytics" />
+  <meta property="og:title" content="Chapter 3 A Brief Introduction to \(\texttt{R}\) | Data Science and Econometrics for NBA Analytics" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Data Science and Econometrics for NBA Analytics" />
+  <meta name="twitter:title" content="Chapter 3 A Brief Introduction to \(\texttt{R}\) | Data Science and Econometrics for NBA Analytics" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="an-optional-primer-on-math-and-statistics.html"/>
 
-<link rel="next" href="an-optional-primer-on-math-and-statistics.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -173,83 +173,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Data Science and Econometrics for NBA Analytics</h1>
-<p class="author"><em>KP</em></p>
-<p class="date"><em>2021-04-01</em></p>
-</div>
-<div id="preface" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Preface</h1>
-<p>The 1960s was a period of time where oil became the most valuable and productivity augmenting resource for companies to extract, prompting companies to engage in a race to extract as much oil as possible without any regard for the environmental and social consequences. However, recent times has seen data replace oil as the most valuable resource, even for sports organizations. Analytics have a major place in today’s sports world. At some level, every sports organization relies on data and analytics for team development, salary structure, and in-game strategy.</p>
-<p>Despite being a skeptic of sports analytics, I still believe that statistics can provide a more nuanced understanding and evaluation of the game of basketball if it is used correctly. The goal of this series of tutorials is to provide basketball fans a hands-on explanation of classical data analysis techniques and to develop proficiency in applying these techniques in a modern and flexible but relatively easy to learn programming language in <span class="math inline">\(\texttt{R}\)</span>. Broadly speaking, I want my tutorials to help people get started in two ways: acquire practical skills such as data sourcing, data visualization, and data cleaning, and an understanding of statistics and statistical fallacies so the reader can carry out careful and hopefully meaningful studies of questions related to basketball.</p>
-<div id="thematic-elements" class="section level2">
-<h2><span class="header-section-number">1.1</span> Thematic Elements</h2>
-<p>I am designing these tutorials with a specific theme throughout. Rather than very specific explanations about NBA advanced statistics , I want the reader to walk from these tutorials with knowledge of the <strong>techniques and methodologies</strong> of carrying out analytic studies. This means an emphasis on using <span class="math inline">\(\texttt{R}\)</span> for <strong>exploratory data analysis (EDA)</strong> and the application of statistics to help you learn about NBA analytics by yourself. Sports analytics is too broad and messy of a field for a person to detail everything that is to know. The best I can do is help you get started on discovering patterns and formulating questions by yourself. This doesn’t mean I won’t go over any details about advanced NBA statistics. This is a tutorial on the application of statistics to NBA analytics. Therefore, the general structure of the tutorials will be as follows,</p>
-<ol style="list-style-type: decimal">
-<li>A detailed discussion of a statistical technique</li>
-<li>How to implement that statistical technique in <span class="math inline">\(\texttt{R}\)</span></li>
-<li>A specific application to basketball</li>
-<li>An optional appendix.</li>
-</ol>
-<p>I want these tutorials to appeal to a variety of different people. Therefore, I am leaving the main ideas of the statistics lecture in the first part and will leave the overtly mathematical explanations in the fourth part, the appendix, for interested readers with the appropriate background.</p>
-</div>
-<div id="how-you-should-approach-these-tutorials" class="section level2">
-<h2><span class="header-section-number">1.2</span> How you should approach these tutorials</h2>
-<p>With any skill, the best way to learn is by doing. Reading and spectating will only go so far when it comes to data analysis. Try to understand the explanations about the statistical techniques intuitively. You should be able to give a 2 to 4 sentence summary of what is actually trying to be accomplished. For the <span class="math inline">\(\texttt{R}\)</span> portions of the tutorials, I will be providing code directly on this document with the output printed. You should type the code while reading and make sure that the output on your screen is the same as the output in this document. Rather than trying to memorize the code you’re typing, try to understand the general design of the code. Even experienced programmers rely on documentation and google for help, but good programmers understand proper code design.</p>
-</div>
-<div id="a-list-of-topics" class="section level2">
-<h2><span class="header-section-number">1.3</span> A list of topics</h2>
-<ul>
-<li>Math and Statistics Prerequisites</li>
-<li>Differences between Machine Learning and Econometrics</li>
-<li>Topic 1: Exploratory Data Analysis with <span class="math inline">\(\texttt{R}\)</span>
-<ul>
-<li>A Brief Introduction to <span class="math inline">\(\texttt{R}\)</span></li>
-<li>NBA Data Sources and Alternative Methods for Sourcing Data</li>
-<li>Data Visualization using <span class="math inline">\(\texttt{ggplot2}\)</span></li>
-</ul></li>
-<li>Topic 2: Clustering
-<ul>
-<li><span class="math inline">\(\textit{k}\)</span> - means clustering</li>
-<li>DP- Means clustering algorithm</li>
-<li>Hierarchical Clustering</li>
-<li>Application: Identifying different roles amongst NBA players</li>
-</ul></li>
-<li>Topic 3: Classification Methods
-<ul>
-<li>Logistic Regression</li>
-<li>Support Vector Machines</li>
-<li><span class="math inline">\(\textit{K}\)</span>th Nearest Neighbors Method</li>
-<li>Application: Predicting Basketball Hall of Fame Inductees</li>
-<li>Application: Regular Season League MVP Tracker</li>
-</ul></li>
-<li>Topic 4: Fundamentals of Regression Analysis
-<ul>
-<li>Ordinary Least Squares (OLS)</li>
-<li>Statistical Inference</li>
-<li>Model Selection</li>
-<li>Application: NBA team effects on high volume shooting</li>
-<li>Application: Retrospective Analysis of the relationship between Strip Club Quality and James Harden’s Performance (Credit to u/AngryCentrist)</li>
-</ul></li>
-<li>Topic 5: Additional Topics in Regression
-<ul>
-<li>Working with Data Issues</li>
-<li>Regression for Time Series Data</li>
-<li>Regression for Panel Data</li>
-<li>Application: Analyzing the existence of Hot and Cold Streaks</li>
-<li>Application: The beginning of the 3-point era</li>
-</ul></li>
-</ul>
+<div id="a-brief-introduction-to-textttr" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> A Brief Introduction to <span class="math inline">\(\texttt{R}\)</span></h1>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="an-optional-primer-on-math-and-statistics.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="an-optional-primer-on-math-and-statistics.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -280,7 +214,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/KushalPatel98/NBADS/edit/master/index.Rmd",
+"link": "https://github.com/KushalPatel98/NBADS/edit/master/03-introduction-to-r.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -288,7 +222,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/KushalPatel98/NBADS/blob/master/index.Rmd",
+"link": "https://github.com/KushalPatel98/NBADS/blob/master/03-introduction-to-r.Rmd",
 "text": null
 },
 "download": null,
